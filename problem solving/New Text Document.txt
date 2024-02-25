@@ -1,0 +1,1394 @@
+1.
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    s=0
+    a=list(map(int,input().split()))
+    for i in range(len(a)):
+        s+=a[i]
+    if s%2!=0:
+        print('YES')
+    else:
+        print('NO')
+2.
+for _ in range(int(input())):
+    j=int(input())
+    l=list(map(int,input().split()))
+    o=0
+    for i in l:
+        if i%2!=0:
+            o+=1
+    if o==0:
+        print("NO")
+    elif o%2==0:
+        print("YES")
+    else:
+        print("NO")
+
+3.
+import math
+for i in range(int(input())):
+  N,M = input().split()
+  N = int(N)
+  M = int(M)
+  r = math.ceil(N/2)
+  s = math.ceil(M/2)
+  print(r * s)    
+
+4.
+def digit_sum(n,p):
+    s=0
+    num=n
+    while n!=0:
+        s=s+(n%10)
+        n=n//10
+    if s%2 == p:
+        return digit_sum(num+1,p)
+    else:
+        return num
+        
+t=int(input())
+for i in range(t):
+    n=int(input())
+    num=n
+    s=0;p=0
+    while n!=0:
+        s=s+(n%10)
+        n=n//10
+    if s%2==1:
+        p=1
+    num+=1
+    print(digit_sum(num,p))
+5.
+t=int(input())
+for i in range(t):
+    n=int(input())
+    x1,y1=map(int,input().split())
+    x2,y2=map(int,input().split())
+    x3,y3=map(int,input().split())
+    a=(x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)
+    b=(x1-x3)*(x1-x3)+(y1-y3)*(y1-y3)
+    c=(x3-x2)*(x3-x2)+(y3-y2)*(y3-y2)
+    if(a<=n*n and b<=n*n or b<=n*n and c<=n*n or a<=n*n and c<=n*n):
+        print('yes')
+    else:
+        print('no')
+6.
+from collections import Counter
+for t in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    d=Counter(l)
+    f=1
+    for i in d:
+        if d[i]%i!=0:
+            f=0
+            break
+    if f==0:
+        print('NO')
+    else:
+        print('YES')
+7.
+t=int(input())
+for i in range(t):
+    n,k=map(int,input().split())
+    if n%2==0:
+        print('YES')
+    else:
+        if k==1:
+            print('YES')
+        else:
+            print('NO')
+8.
+t=int(input())
+for i in range(t):
+    a,b,c=map(int,input().split())
+    if((a+b)//c)%2==0:
+        print("CHEF")
+    else:
+        print("COOK")
+9.
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int,input().split()))
+    count = 0
+    for i in range(n):
+        if(a[i]%2 == 0):
+            print("NO")
+            break
+    else:
+        print("YES")
+10.
+n=int(input())
+c=[int(x) for x in input().split()]
+s=sum(c)
+son=n*(n+1)//2
+if(s==son):
+    print("YES")
+else:
+    print("NO")
+
+Yes. Go to FIFA 18 folder..in that go to fifasetup..open fifaconfig file..now use all minimal settings for graphics and use DirectX 11 only. Now save the settings and go to FIFA 18 folder...right click on fifa18.exe file..go to properties..go to compatibility tab..tick run as admin box..apply and run the game..it'll work
+    
+11.
+T = int(input())
+for t in range(T):
+    s = input()
+    sum = 0
+    for i in range(len(s)):
+        if(s[i].isnumeric()):
+            sum = sum + int(s[i])
+        
+    print(sum)   
+12.
+n,q = map(int,input().split())
+a = list(map(int,input().split()))
+b = min(a)
+c = max(a)
+for i in range(q):
+    if b<= int(input()) <= c:
+        print('Yes')
+    else:
+        print('No')
+13.
+t = int(input())
+#for t in range(int(input())):
+for i in range(0,t):
+    n,m,k = map(int,input().split())
+    x=abs(n-m)
+    if k>=x:
+        print(0)
+    else:
+        print(abs(x-k))
+14.
+from math import ceil
+# cook your dish here
+t = int(input())
+for i in range(t):
+    n = int(input())
+    s = input()
+    a = 0
+    for i in range(n//2):
+        if s[i]!=s[n-1-i]:
+            a +=1
+    print(ceil(a/2))
+15.
+t = int(input())
+for i in range(t):
+    n,x = map(int,input().split())
+    if x <= n:
+        print(x)
+    else:
+        print(x%(n+1))
+16.
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    if 1 in l:
+        print('CHEF')
+    else:
+        if sum(l)%2==0:
+            print('CHEFINA')
+        else:
+            print('CHEF')
+17.
+x,y=map(int,input().split())
+z=x-y
+if z%10==9:
+    print(z-1)
+else:
+    print(z+1)
+18.
+for _ in range(int(input())):
+    n, a, b, c = map(int, input().split())
+    if (a + c >= n) and (b >= n):
+        print("Yes")
+    else:
+        print("No")
+19.
+t=int(input(""))
+for i in range(t):
+    n,k=map(int,input().split())
+    L=[int(x) for x in input().split()]
+    m=(n+k)//2
+    L.sort()
+    print(L[m])
+20.
+for _ in range(int(input())):
+    a=int(input())
+    l=list(map(int,input().split()))
+    c=0
+    for i in range(a):
+        for j in range(i+1,a):
+            if l[i]&l[j]==l[i]:
+                c+=1
+    print(c)
+21.
+t=int(input())
+for i in range(t):
+    a,b,c,d=map(int,input().split())
+    if (a==b and c==d) or (a==c and b==d) or (a==d and b==c) :
+        print("YES")
+    else:
+        print("NO")
+22.
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    free=k
+    ans=0
+    for i in range(n):
+        t,d=map(int,input().split())
+        if(free<=0):
+            ans+= t*d
+        else:
+            if(free>t):
+                free=free-t
+            else:
+                ans+= (t-free)*d
+                free=free-t
+    print(ans)
+
+23.
+import math
+for i in range(int(input())):
+    A=[int(n) for n in input().split()]
+    A.pop(0)
+    div=math.gcd(*A)
+    for x in A:
+        print(x//div,end=" ")
+    print()
+24.
+t=int(input())
+for i in range(t):
+    num=int(input())
+    for j in range(num,0,-1):
+        print(j,end=" ")
+    print()    
+25.
+t = int(input())
+for i in range(t):
+    n,x,y = map(int,input().split())
+    s = 2*(n-1)+min(x-1,y-1)+min(x-1,n-y)+min(n-x,y-1)+min(n-x,n-y)
+    print(s)
+26.
+for _ in range(int(input())):
+    n,y = map(int,input().split())
+    l = list(map(int,input().split()))
+    s = l[0]
+    for i in l[1:]:
+        s |= i
+    x = s|y
+    if x==y:
+        print(y-s)
+    else:
+        print(-1)
+27.
+t=int(input())
+for i in range(t):
+    n,k,v=map(int,input().split(" "))
+    x=list(map(int,input().split(" ")))
+    xsum=sum(x)
+    ans=(v*(n+k)-xsum)/k
+    if ((ans-int(ans)==0)and ans>0):
+        print(int(ans))
+    else:
+        print(-1)
+    
+28.
+for _ in range(int(input())):
+    N = int(input())
+    S = [0,0,0,0,0,0,0,0,0,0]
+    for i in range(N):
+        a = list(input())
+        for x in range(10):
+            S[x] = S[x] ^ int(a[x])
+            
+    print(S.count(1))
+29.
+for i in range(int(input())):
+    n=int(input())
+    string=''
+    li=[]
+    for j in range(n):
+        string+=input()
+    li.append(string.count('e')//2)
+    li.append(string.count('c')//2)
+    li.append(string.count('o'))
+    li.append(string.count('h'))
+    li.append(string.count('f'))
+    li.append(string.count('d'))
+    print(min(li))
+30.
+t=int(input())
+for i in range(t):
+    a,b,c,d=map(int,input().split())
+    x=a+b
+    y=c+d
+    p=x%2
+    q=y%2
+    if(a==c and b==d):
+        print('0')
+    elif(p==q):
+        print('2')
+    else:
+        print('1')
+        
+31.
+T = int(input())
+for i in range(T):
+    A,B = map(int,input().split())
+    if A%2==1 and B%2==1:
+        print("No")
+    elif A==1 or B==1:
+        print("No")
+    else:
+        print("Yes")
+32.
+t=int(input())
+for i in range(t):
+    a,b,c,d=map(int,input().split())
+    x=a+b
+    y=c+d
+    p=x%2
+    q=y%2
+    if(a==c and b==d):
+        print('0')
+    elif(p==q):
+        print('2')
+    else:
+        print('1')
+        
+33.
+for i in range(int(input())):
+    n,m,k=map(int,input().split())
+    a=list(map(int,input().split()))
+    b=list(map(int,input().split()))
+    c1=0
+    c2=0
+    for j in range(1,n+1):
+        if (j in a) and (j in b):
+            c1=c1+1
+        elif (j not in a )and (j not in b):
+            c2=c2+1
+    
+    print(c1,c2)
+34.
+for i in range(int(input())):
+    a,b,c=map(int,input().split())
+    l=list(map(int,input().split()))
+    if(sum(l)==a):
+        print(100)
+    elif(sum(l)!=a and sum(l[0:b])==b):
+        print(c)
+    else:
+        print(0)
+35.
+t=int(input())
+while (t!=0):
+    n=int(input())
+    s=input()
+    cnt=0
+    for i in range (0,n):
+        if s[i]=='1':
+            cnt+=1 
+        else:
+            break 
+    print(cnt)
+    t-=1
+36.
+for _ in range(int(input())):
+    n,k,s=map(int,input().split())
+    p=s-n*n
+    ans=p//(k-1)
+    print(ans)
+37.
+import math
+for _ in range(int(input())):
+    n,d=map(int,input().split())
+    arr=list(map(int,input().split()))
+    risk,not_risk=0,0
+    for i in arr:
+        if i>=80 or i<=9:
+            risk+=1
+        else:
+            not_risk+=1
+    total=math.ceil(risk/d)+math.ceil(not_risk/d)
+    print(total)
+38.
+for _ in range(int(input())):
+    n = int(input())
+    s = n*(n+1)/2
+    if s%2==0:
+        print(n)
+    else:
+        print(n-1)
+39.
+import math
+x, n = map(int, input().split())
+comb = 0
+for i in range(n):
+    a = input()
+    for i in range(9):
+        b = a[:4] + a[-2:]
+        a = a[4:-2] 
+        d = b.count('0')
+        if d>=x:
+            comb+=math.comb(d,x)
+print(comb)
+
+40.
+t= int(input())
+for i in range(t):
+    o=[]
+    n,k= map(int,input().split())
+    l=list(map(int,input().split()))
+    l= sorted(l)
+    s= sum(l[k:n-k])/(n-2*k)
+    print(s)
+    
+41.
+t = int(input())
+while t:
+    a,b,c,p,q,r = map(int,input().split())
+    g = (p+q+r)/2
+    h = a+q+c
+    if g<h:
+        print("YES")
+    elif a+b+c>g:
+        print("YES")
+    elif b+c+p>g:
+        print("YES")
+    elif a+b+r>g:
+        print("YES")
+    else:
+        print("NO")
+        
+    t-=1
+42.
+t=int(input())
+x=0
+for _ in range(t):
+    a,b,n=map(int,input().split())
+    if a%b==0:
+        print(-1)
+        continue
+    
+    x=n
+    if (x%a!=0):
+        x=n+a-(x%a)
+    while not (x%a==0 and x%b!=0):
+        x+=a
+    print(x)
+
+    You have the most beautiful eyes.I have ever seen....
+
+You have the most beautiful eyes.I have ever seen....
+You have the most beautiful eyes.I have ever seen....
+
+
+43.
+for i in range(int (input())):
+    n = int(input())
+    x = list(map(int, input().split()))
+    change = []
+    try:
+        for i in x:
+            if i == 5:
+                change.append(i)
+            elif i ==10:
+                change.append(i)
+                change.remove(5)
+            elif i ==15:
+                change.append(i)
+                try:
+                    change.remove(10)
+                except:
+                    change.remove(5)
+                    change.remove(5)
+    except:
+        print("NO")
+    else:
+        print("YES")   
+44.
+t=int(input())
+for i in range(t):
+    x,y=map(int,input().split())
+    s=input()
+    c=s.count("1")*x 
+    a=list(s.split("0"))
+    l=0
+    for i in a:
+        if len(i)>l:
+            l=len(i)
+    c=c+(l*y)
+    print(c)
+45.
+t=int(input())
+m,c=list(map(int,input().split()))
+a=0
+b=0
+for i in range(0,t):
+    x,y,p=list(map(int,input().split()))
+    y1=m*x+c
+    if y-y1>0:
+        a+=p
+    else:
+        b+=p
+print(max(a,b))  
+46.
+n = int(input())
+areas = []
+
+for i in range(n):
+    x1, y1, x2, y2, x3, y3 = map(int, input().split())
+    area = abs(x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2))*0.5
+    areas.append(area)
+
+min_index = n - areas[::-1].index(min(areas))
+max_index = n - areas[::-1].index(max(areas))
+
+print(min_index, max_index)
+
+47.
+import math
+for _ in range(int(input())):
+    l = int(input())
+    s = input()
+    if s[1:].count('1') != 0:
+        index = s[1:].index('1')
+        print(index+1)
+    else:
+        print(l)
+48.
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int, input().split()))
+    a2 = a.count(2)
+    a0 = a.count(0)
+    s2 = a2*(a2-1)//2
+    s0 = a0*(a0-1)//2
+    print(s2+s0)
+49.
+b = int(input())
+for i in range (b):
+    N=int(input())
+    a=list(map(int,input().split()))
+    s=min(a)
+    for i in range (len(a)):
+        a[i]=a[i]-s
+    print (sum(a))
+50.
+import math
+for _ in range(int(input())):
+    n,x=map(int, input().split())
+    c=math.ceil(x/3)
+    w=c*3-x
+    u=n-c-w
+    if u>=0:
+        print("YES")
+        print(c,w,u)
+    else:
+        print("NO")
+51.
+import math
+for i in range(int(input())):
+    c1=0
+    a,b=map(int,input().split())
+    n=abs(a-b)
+    for i in range(1,int(math.sqrt(n))+1):
+        if (n % i == 0) :
+            if (n / i == i) :
+                c1+=1
+            else :
+                c1+=2
+    print(c1)
+52.
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int, input().split()))
+    if 2 in a:
+        print('No')
+    else:
+        if 5 in a and sum(a)/n >= 4.0:
+            print('Yes')
+        else:
+            print('No')
+53.
+for i in range(int(input())):
+    s=int(input())
+    l=list(map(int,input().split()))
+    l.sort()
+    print(2*abs(l[0]-l[s-1]))
+54.
+for _ in range(int(input())):
+    n,x=map(int,input().split())
+    if x==1:
+        print("EVEN" if n%2==0 else "ODD")
+    elif x==2:
+        print("ODD")
+    else:
+        print("EVEN")
+55.
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    mp=0
+    for i in range(1,k+1):
+        if n % i > mp:
+            mp=n % i
+    print(mp)
+56.
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    if k==0:
+        print(n)
+    else:
+        print(n%k)
+57.
+t=int(input())
+for i in range(t):
+    n,a,b=map(int,input().split())
+    if(abs(a-b) in (1,2)):
+        if(a==1 or b==1 or a==n or b==n) or abs(a-b)==2:
+            print(1)
+        else:
+            print(2)
+    else:
+        print(0)
+58.
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int,input().split()))
+    odd = even = 0 
+    for i in a:
+        if i%2==0:
+            even+=1 
+        else:
+            odd+=1 
+    print(odd*even)
+            
+59.
+for i in range(int(input())):
+    k=int(input())
+    if k==0:
+        print(3)
+        continue
+    s=''
+    n,d=103993,33102
+    while len(s)<=k:
+        s+=str(n//d)
+        n=n%d*10
+    print('3.'+s[1:])
+
+60.
+n=int(input())
+for i in range(0,n):
+    j=int(input())
+    l=list(map(int,input().split()))
+    if len(l)==1:
+        print(2)
+        continue
+    elif min(l)==1:
+        print(-1)
+        continue
+    else:
+        print(sum(l)-min(l)+2)
+61.
+t=int(input())
+for i in range(0,t):
+    n=int(input())
+    #c=0
+    l=list(map(int,input().split()))[:n]
+    c=0
+    for i in l:
+        c=c+i
+    print((c*(c-1))%998244353)   
+
+62.
+for _ in range(int(input())):
+    p,s = map(int,input().split())
+    
+    x = (p - (p ** 2 - 24 * s) ** 0.5) / 12
+    h = (p - 8 * x) / 4
+    
+    print(round(x * x * h, 2))
+
+63.
+for _ in range(int(input())):
+    n= int(input()) +4
+    ans = 'NO'
+    for i in range(3, int(n**(1/2))+1):
+        if n%i == 0:
+            ans = 'YES'
+            break
+    print(ans)
+64.
+import math as ma
+t=int(input())
+for i in range(t):
+    m=int(input())
+    n=list(map(int,input().split()))
+    print(m*ma.gcd(*n))
+65.
+for _ in range(int(input())):
+    n=int(input())
+    if(n%4==1):
+        print("ALICE")
+    else:
+        print("BOB")
+        
+66.
+t=int(input())
+while t>0:
+    n=int(input())
+    c=n 
+    a=1 
+    for i in range(n):
+        if i%2==0:
+            print(c,end=" ")
+            c-=1 
+        else:
+            print(a,end=" ")
+            a+=1
+            
+    print()
+    t-=1 
+67.
+for _ in range(int(input())):
+    N = int(input())
+    d = '1' + '0'*(N//2)
+    print(1, d)
+69.
+t=int(input())
+for  _ in range(t):
+    A,B,N=map(int,input().split())
+    A=A*(2**(N%2))
+    B=B
+    if A>B:
+        print(A//B)
+    else:
+        print(B//A)
+70.
+for _ in range(int(input())):
+    x,y,n = map(int, input().split())
+    if n%2 == 0:
+        x = abs(x)
+        y = abs(y)
+    if x > y:
+        print(1)
+    elif x < y:
+        print(2)
+    else:
+        print(0)
+71.
+import math
+for i in range (int(input())):
+    n=int(input())
+    l=[]
+    for i in range (1,int(math.sqrt(n))+1):
+        if n%i==0:
+            l.append(abs(n//i-i))
+    print(min(l))        
+72.
+for _ in range(int(input())):
+    x = input()
+    y = input()
+    z = ""
+    for i in range(len(x)):
+        if x[i] == "B" and y[i] == "B":
+            z += "W"
+        else:
+            z += "B"
+    print(z)
+73.
+for i in range(int(input())):
+    n=int(input())
+    s=input()
+    k=0
+    for i in s:
+        if i=="1":
+            k+=1 
+    print(k*(k+1)//2)
+
+74.
+a=int(input())
+for i in range(a):
+    n=int(input())
+    l=list(map(int,input().split()))
+    ans=0
+    for i in l:
+        ans^=2*i 
+    print(ans)
+75.
+T = int(input())
+
+for t in range(T):
+    TS = int(input())
+    k = 2
+    while TS % k == 0:
+        k *= 2
+    print(TS // k)
+76.
+for _ in range(int(input())):
+    n = int(input())
+    s = input()
+    x = s.count("0")
+    y = s.count("1")
+    if n%2 == 1:
+        print("YES")
+    else:
+        if x%2 == 0 or x == y:
+            print("YES")
+        else:
+            print("NO")
+77.
+for _ in range(int(input())):
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    ans = 0
+    for l in a:
+        if l %k != 0:
+            r = l % k
+            if l < k:
+                ans += k-r
+            else:
+                ans += min(r, k-r)
+    print(ans)
+
+78.
+for _ in range(int(input())):
+    x,y = map(int, input().split())
+    p = x*y
+    if p%2 == 1:
+        print("No")
+    else:
+        print("Yes")
+79.
+for i in range(int(input())):
+    n=int(input())
+    B=[int(i) for i in input().split()]
+    if(sum(B)%2==0):
+        print("YES")
+    else:
+        print("NO")
+80.
+
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int, input().split()))
+    count = 0
+    for i in range(n):
+        if a[i]%2 == 0:
+            count += 1
+    even = n // 2
+    odd = n - even
+    print(min(odd, count) + min(even, (n - count)))
+        
+
+81.
+T=int(input())
+i=0
+while i<T:
+    U,V,A,S=map(int,input().split())
+    v=(U**2)-(2*A*S)
+    if v <= (V**2):
+        print("Yes")
+    else:
+        print("No")
+    i=i+1
+82.
+from math import lcm
+for _ in range(int(input())):
+    n,a,b,k = map(int,input().split())
+    c = n//a + n//b - 2*(n//lcm(a,b))
+    if c>=k:
+        print('Win')
+    else:
+        print('Lose')
+83.
+for _ in range(int(input())):
+    n=int(input())
+    lis=[]
+    for i in range(1,n+1):
+        lis.append(i)
+    print(*lis)
+84.
+for i in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    d=sum(l)
+    if d>=0:
+        print("YES")
+    else:
+        print("NO")
+85.
+for _ in range(int(input())):
+    n,k,l = map(int,input().split())
+    if k*l<n or (k==1 and n>1):
+        print(-1)
+    else:
+        c=1
+        for i in range(n):
+            print(c,end=" ")
+            c+=1 
+            if c==k+1:
+                c=1 
+        print()
+86.
+for _ in range(int(input())):
+    n,s = map(int, input().split())
+    x = n*(n+1)//2
+    p = x-s
+    if 1 <= p <= n:
+        print(p)
+    else:
+        print(-1)
+
+87.
+z=int(input())
+for i in range(z):
+    x,y=map(int,input().split())
+    n=x+y
+    m= ((n*(n+1)//2)+1+x)
+    print(int(m))
+88.
+for _ in range(int(input())):
+    l,d,s,c = map(int, input().split())
+    for i in range(d):
+        x = s*(c+1)**i
+        if x >= l:
+            print("ALIVE AND KICKING")
+            break
+    else:
+        print("DEAD AND ROTTING")
+89.
+import math
+for _ in range(int(input())):
+    x,y = map(int, input().split())
+    print(2*math.gcd(x,y))
+90.
+t = int(input())
+for ni in range(t):
+    n, k = map(int, input().split())
+    if(n == 1 or k == 1):
+        print('NO')
+    else:
+        if(n % (k*k) == 0):
+            print('NO')
+        else:
+            print('YES')
+91.
+for _ in range(int(input())):
+    n = int(input())
+    a=[]
+    c=1
+    for i in range(n):
+        if len(a)!=n:
+            a.append(c)
+            c+=4
+    print(*a)
+92.
+t = int(input())
+for i in range(t):
+    a,b,c,d,k = map(int,input().split())
+    
+    val = abs(a-c)+abs(b-d)
+    
+    if val>k:
+        print("NO")
+    elif val==k:
+        print("YES")
+    elif val<k:
+        if (k-val)%2==0:
+            print("YES")
+        else:
+            print("NO")
+93.
+for _ in range(int(input())):
+    n,m = map(int, input().split())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+    d = {}
+    for x in a:
+        d[x] = 1
+    c = 0
+    for x in b:
+        if x in d:
+            c += 1
+    print(c)
+94.
+for _ in range(int(input())):
+  a, b = map(int, input().split()) 
+  a = a // 2
+  b = (b+1) // 2
+  if (a-b)%2:
+    print('Odd')
+  else:
+    print('Even')
+95.
+import math
+for _ in range(int(input())):
+    n = int(input())
+    ans=int(math.log(n,2))
+    print(n-ans-1)
+    
+96.
+# cook your dish here
+t=int(input())
+while(t):
+    n=int(input())
+    if(n%2==0):
+        for i in range(n):
+            for j in range(n):
+                print("-1",end=' ')
+            print()
+            
+    else:
+        for i in range(n):
+            for j in range(n):
+                if(i!=j):
+                    print("1", end=' ')
+                else:
+                    print("-1", end=' ')
+            print()   
+            
+    t-=1
+97.
+for _ in range(int(input())):
+
+    s = input()
+
+    x = 1
+    t = 1
+    m = 1000000007
+    for c in s:
+        if t%2 == 0 and c == "l":
+            x = 2*x-1
+        elif t%2 == 0 and c == "r":
+            x = 2*x+1
+        elif t%2 == 1 and c == "l":
+            x = 2*x
+        elif t%2 == 1 and c == "r":
+            x = 2*x+2
+        t += 1
+    print(x%m)
+98.
+t=int(input())
+for i in range(t):
+    ballons=list(map(int,input().split()))
+    K=int(input())
+    count=0
+    for i in range(3):
+        count+=min(ballons[i],K-1)
+    print(count+1)    
+99.
+t=int(input())
+for i in range(t):
+    n=int(input())
+    a=[]
+    a.append(n)
+    a.append(n-2)
+    for j in range(1,n-2):
+        
+            a.append(j)
+    a.append(n-1)        
+    print(*a)   
+100.
+t = int(input())
+for i in range(t):
+    n = int(input())
+    i = 1
+    s = 0
+    while(i <= n):
+        s += (n-i+1)**2
+        i += 2
+    print(s)
+101.
+for _ in range(int(input())):
+    M = 10**9 + 7
+    n = int(input())
+    print(pow(2, n-1, M))
+2.
+for _ in range(int(input())):
+    n=int(input())
+    ans=[]
+    l=n
+    k=0
+    for i in range(n):
+        if i%2==0:
+            ans.append(l)
+            l-=1
+        else:
+            ans.append(k+1)
+            k+=1
+    print(*ans)
+3.
+t = int(input())
+for _ in range(t):
+	D, d, P, Q = map(int, input().split())
+
+	add = D//d
+	rem = D%d
+	ans = (add*P + add*(add-1)//2 * Q)*d
+	ans += rem*(P + add*Q)
+
+	print(ans)
+4.
+import math
+for _ in range(int(input())):
+    n=int(input())
+    p=int(math.sqrt(n))
+    ans=0
+    for i in range(1,p+1):
+        if n%i==0:
+            q=int(n/i)
+            if q==i:
+                ans+=i
+            else:
+                ans+=i+q
+    print(ans)
+5.
+a=int(input())
+for i in range (a):
+    x=list(map(int,input().split()))
+    y=list(map(int,input().split()))
+    for i in range(x[0]):
+        z=input()
+        m=0
+        for i in range(len(z)):
+            if z[i]=="1":
+                m=m+y[i]
+        print(m)
+6.
+
+def gcd(a, b):
+    if b == 0:
+        return a 
+    return gcd(b, a%b)
+
+def lcm(a, b):
+    return (a*b) // gcd(a,b)
+
+for _ in range(int(input())):
+    N = int(input())
+    L = list(map(int, input().split()))
+    min_lcm = -1
+    for i in range(N):
+        for j in range(N):
+            if i == j:
+                continue
+            l = lcm(L[i], L[j])
+            if l < min_lcm or min_lcm == -1:
+                min_lcm = l 
+    print(min_lcm)
+7.
+T=int(input())
+for i in range(T):
+    
+    n,x,y=map(int,input().split())
+    a=b=c=0
+    n1=n2=n3=n
+    while n1>0:
+        n1=n1-100
+        a+=1
+    while n2>0:
+        n2=n2-4
+        b+=1
+    while n3>0:
+        if n3>=100:
+            n3=n3-100
+            c+=x
+        else:
+            n3=n3-4
+            c+=y
+    print(min(a*x,b*y,c))
+8.
+T = int(input())
+while(T > 0):
+    T -= 1
+    n = int(input())
+    mod = (10**9)+7
+    print((pow(2,n,mod)-1))
+9.
+import math;
+for _ in range(int(input())):
+    l,r=map(int,input().split());
+    p1,p2=math.ceil(l/3),math.floor(r//3);
+    print(int(p2-p1+1));
+
+        
+10.
+for _ in range(int(input())):
+  n = int(input())
+  for i in range(n):
+    x, y = map(int,input().split())
+  s = 0
+  while n>=3:
+    s+=n
+    n//=2
+  print(s)
+11.
+d = int(input())
+if d%2:
+  print(-1)
+else:
+  d //= 2
+  print(-d, 0)
+  print(0, d)
+  print(0, -d)
+  print(d, 0)
+12.
+for i in range(int(input())):
+  k,s=map(str, input().split())
+  k=int(k)
+  a=''
+  for i in range(2**k):
+    v=0
+    x=k
+    while i>0:
+      v=v+(2**(x-1))*(i%2)
+      i=i//2
+      x=x-1
+    a=a+s[int(v)]
+  print(a)
+12.
+t=int(input())
+i=0
+while i<t:
+    n,m,x,y=map(int,input().split())
+    n=n-1
+    m=m-1
+    if (n%x==0 and m%y==0) or ((n-1)%x==0 and (m-1)%y==0 and m>0 and n>0) or (n==0 and m==0):
+        print('Chefirnemo')
+    else:
+        print('Pofik')
+    i+=1
+13.
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    for i in range(n):
+        if((i+1)%l[i]==0):
+            continue
+        else:
+            print("NO")
+            break
+    else:
+        print("YES")
+14.
+import math 
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    if(a==1 or b==1):
+        print("-1")
+    elif(math.gcd(a,b)==1):
+        print(1)
+    else:
+        print(0)
+15.
+for _ in range(int(input ())):
+    n,k = map(int,input().split())
+    a = list(map(int,input().split()))
+    l = []
+    for i in range(n-1):
+        for j in range(i+1,n):
+            l.append(abs(a[i]+a[j]-k))
+    print(min(l),l.count(min(l)))
+16.
+a=int(input())
+cnt=0
+for i in range(a):
+    x,y=map(int,input().split())
+    ar=list(map(int,input().split()))
+    for i in ar:
+        if i%y==0:
+            cnt+=1
+    print((2**cnt)-1)
+    cnt=0
+17.t=int(input())
+for i in range(t):
+    s,v=map(int,input().split())
+    print((2*s)/(3*v))
+
+18.
+t=int(input())
+for z in range(t):
+    n=int(input())
+    i=20
+    l=[]
+    while n>=i:
+        l.append(i)
+        i=i*20
+    while n>10:
+        if n in l:
+            n=10
+        elif n%10==0:
+            n=n/10
+        else:
+            n=8
+    if n==10:
+        print('Yes')
+    else:
+        print('No')
+19.
+def solve(x): 
+    s=0
+    while x>0:
+        s+=x%10
+        x//=10
+    return s
+    
+    
+n = int(input())
+res=0
+for i in range(max(0,n-97),n+1):
+    sx = solve(i)
+    ssx = solve(sx)
+    if i+sx+ssx == n: 
+        res+=1
+print(res)
+
+20.
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        dp=[1]*n
+        pre=0
+            
+        for i in range(1,m):
+            for j in range(n):
+                if j==0:
+                    pre=1
+                else:
+                    dp[j]=dp[j]+pre
+                    pre=dp[j]
+        return dp[n-1]
+
+21.
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        r=len(matrix)
+        c=len(matrix[0])
+        l=0
+        h=r*c-1
+        if len(matrix)==1:
+            if target in matrix[0]:
+                return True
+        while l<=h:
+            mid=(l+h)//2
+            if matrix[mid//c][mid%c]==target:
+                return True
+            elif matrix[mid//c][mid%c]<target:
+                l=mid+1
+            else:
+                h=mid-1
+        return False
+            
+   
+        
+    
+
+
+        
+
+    
+  
+     

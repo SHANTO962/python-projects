@@ -1,0 +1,534 @@
+
+1
+import math
+n = int(input())
+
+for _ in range(n):
+    num = int(input())
+    flag = False
+    i = 2
+    while(i*i < num):
+        if(num%i == 0):
+            print(1,i,num//i)
+            flag = True
+            break
+        i+=1
+    
+    if not flag:
+        print(-1)
+
+2.
+# cook your dish here
+T = int(input())
+for _ in range (T):
+    N, K= list(map(int, input().split()))
+    A=list(map(int,input().split()))
+    B=[]
+    C=set(A)
+    for j in C:
+        if A.count(j)==K:
+            B.append(j)
+    if len(B)>0:
+        print(sum(B))
+    else:
+        print(-1)
+
+3.
+MOD = 1000000007
+
+def solve():
+    n, k = map(int, input().split())
+    ans = 1
+    for i in range(n):
+        ans = (ans * k) % MOD
+        if k > 1:
+            k -= 1
+    print(ans)
+
+t = int(input())
+while t > 0:
+    solve()
+    t -= 1
+4.
+from collections import Counter
+for x in range(int(input())):
+    a = int(input())
+    b = list(map(int,input().split()))
+    c = Counter(b)
+    t = 0
+    for i in range(1, max(b)+1):
+        if i in c:
+            t += 1
+        else:
+            break
+    ans1 = 1
+    ans2 = 0
+    for i in range(1,t+1):
+        ans1 *= c[i]
+        ans2 += ans1
+    print(ans2%1000000007)
+5.
+t=int(input())
+for i in range(t):
+    a,b=map(int,input().split())
+    c=str(input())
+    d=str(input())
+    ar=[0]*26
+    if(a>b):
+        for j in c:
+            ar[ord(j)-97]+=1
+        for j in d:
+            ar[ord(j)-97]-=1
+    else:
+        for j in d:
+            ar[ord(j)-97]+=1
+        for j in c:
+            ar[ord(j)-97]-=1
+        
+    y,z=0,0
+    for i in ar:
+        if(i<=-1):
+            y=y+1 
+        if(i%2==1):
+            z=z+1 
+    if(y>0):
+        print("NO")
+    elif(z>1):
+        print("NO")
+    else:
+        print("YES")
+
+6.
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    x=list(map(int,input().split()))
+    y=list(map(int,input().split()))
+    z=list(map(int,input().split()))
+    m=x[1]+x[2]+y[2]
+    n=y[0]+z[0]+z[1]
+    if(m>n):
+        print(m)
+    else:
+        print(n)
+7.
+class Solution(object):
+    def isValid(self, s):
+        parentheses = {
+            '(' : ')',
+            '{' : '}',
+            '[' : ']'
+        }
+        if len(s)  == 0:
+            return True
+        if len(s) == 1:
+            return False
+        stack = []
+        for i in s:
+            if parentheses.get(i):#Checking left brackets in string
+                stack.append(i) #store it in a data structure.
+            else: # The moment we hit a right bracket
+                try:
+                #check was the last left braket that we saw correspondingly in shape to the current right bracket.
+                    last_left_bracket = stack.pop()
+                    correspond_bracket = parentheses.get(last_left_bracket)
+                    if i != correspond_bracket:
+                        return False
+                except: # if the first bracket in string is the right bracket then return false
+                    return False
+        #If string is corresponding then stack data structure will empty else stack will still have some elements
+        return len(stack) == 0
+
+8.
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        
+        ans= ListNode()
+        final = ans
+        while list1 and list2:
+            if list1.val<list2.val:
+                ans.next = list1
+                list1 = list1.next
+            else:
+                ans.next = list2
+                list2 = list2.next
+            ans = ans.next
+        
+        if list1:
+            ans.next = list1
+        else:
+            ans.next = list2
+        
+        return final.next
+   
+    
+10.
+t = int(input())
+for _ in range(t):
+    n,a,b = map(int,input().split())
+    lst = list(map(int,input().split()))
+    alice,bob = 0,0
+    for i in lst:
+        if i % a == 0:
+            bob+=1
+        else:
+            if i % b == 0:
+                alice += 1
+    if alice >= bob:
+        print("ALICE")
+    else:
+        print("BOB")
+11.
+import math
+T=int(input())
+
+for i in range(0,T):
+    N=int(input())
+    
+    x=math.floor(math.log(N,2))
+    print(max((N-2**x+1),(2**(x-1))))
+12.
+for tc in range(int(input())):
+    n,m=map(int,input().split())
+    if n==1 or m==1 :
+        if n==1 and m==2:
+            print('Yes')
+        elif m==1 and n==2:
+            print('Yes')
+        else:
+            print('No')
+    else:
+        
+        if n%2 ==0 or m%2==0 :
+            print('Yes')
+        else:
+            print('No')
+13.
+# cook your dish here
+t=int(input())
+for i in range(t):
+    x,y=map(int,input().split())
+    if(x//2>y//2) or (x%2 and (x==y or x+1==y)):
+        print("chef")
+    else:
+        print("chefina")
+        
+14.
+t=int(input())
+while t>0:
+    N=int(input())
+    A=list(map(int,input().split()))
+    B=list(map(int,input().split()))
+    l=sum(A)
+    m=sum(B)
+    e1,e2=0,0
+    for i in range (N):
+        if A[i]%2==0:
+            e1+=1
+        if B[i]%2==0:
+            e2+=1
+    h=l+m-abs(e1-e2)
+    height= h/2 
+    print(int(height))
+    t-=1
+            
+15.
+for i in range(int(input())):
+    n=int(input())
+    p=list(map(int,input().split()))
+    print(sum(p)+max(p))
+
+16.
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int,input().split()))
+    b = list(map(int,input().split()))
+    a += b 
+    a.sort()
+    min_diff = 1000000000
+    for i in range(n-1,2*n):
+        diff = a[i] - a[i-n+1]
+        if diff < min_diff:
+            min_diff = diff 
+    print(min_diff)
+17.
+t=int(input())
+for i in range(t):
+    n=int(input())
+    for j in range(n):
+        print(2*j+1,end=" ")
+    print()
+        
+18.
+def main(n,s,t,y):
+    k = ord(t[0])-ord(s[0]) 
+    ans   = ""
+    for char in y:
+        alpha = chr((ord(char) - ord('a') +k) % 26 +ord('a')) 
+        ans = ans+alpha
+    return ans
+
+b = int(input())
+for _ in range(b):
+    n = int(input())
+    s = input()
+    t = input()
+    y = input()
+    ans = main(n,s,t,y)
+    print(ans)
+
+19.
+import sys
+for _ in range(int(input())):
+    n=int(input())
+    b=list(map(int,input().split()))
+    mi=sys.maxsize 
+    mx=0
+    flag=False
+    for i in b:
+        if i>mx:
+            mx=i 
+        if i<mi:
+            mi=i 
+        if i!=mx and i!=mi:
+            flag=True 
+            break 
+    if flag:
+        print("NO")
+    else:
+        print("YES")
+20.
+n = int(input())
+# print(n)
+# k=[]
+for i in range(n):
+    s=input()
+    # print(s)
+    arr = []
+    for i in range(len(s)-1):
+        pair = s[i]+s[i+1]
+        if(pair not in arr):
+            arr.append(pair)
+    print(len(arr))
+
+21.
+for _ in range(int(input())):
+    a=list(input())
+    b=list(input())
+    c=0
+    for i in a:
+        if i in b:
+            c+=1
+    print("Yes") if c!=0 else  print("No")
+
+22.
+for i in range(int(input())):
+    n = int(input())
+    s = input()
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    count = 1
+    for j in s:
+        if(j in vowels):
+            continue
+        else:
+            li1 = [abs(ord(k) - ord(j)) for k in vowels]
+            count*=(li1.count(min(li1)))
+
+    print(count%(10**9 + 7))
+
+23
+t=int(input())
+for tc in range(t):
+    a,b,c,d=map(int,input().split())
+    if a==0 or b==0 or c==0 or d==0 or a+b==0 or a+c==0 or a+d==0 or b+c==0 or b+d==0 or c+d==0 or  a+b+c==0 or a+b+d==0 or b+c+d==0 or c+d+a==0 or a+b+c+d==0:
+        print("Yes")
+
+    else:
+        print("No")
+
+24.
+t=int(input())
+for tc in range(t):
+    n=int(input())
+    s=list(map(str,input().split()))
+    c=s.count('cookie')
+    cm=0 
+    for i in range(len(s)-1):
+        if s[i]=='cookie' and s[i+1]=='milk':
+            cm+=1   
+    if cm==c:
+        print("YES")
+    else:
+        print("NO")
+
+25.
+t = int(input())
+
+for _ in range(t):
+    n, x = map(int, input().split())
+    a = list(map(int, input().split()))
+    
+    if max(a) >= x:
+        print('YES')
+    else:
+        print('NO')
+26.
+for _ in range(int(input())):
+    
+    n = int(input())
+
+    if n%4==2 or n%4==3:
+        print(3)
+    elif n%4==0:
+        print(n+3)
+    else:
+        print(n)
+27.
+for t in range (int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    a=[]
+    for i in range(n):
+        a.append(l[i]+i)
+    print (max(a))
+    
+28.
+for _ in range (int(input())):
+    S,W1,W2,W3 = map(int, input().split())
+    if (W1+W2+W3 <= S):
+        print(1)
+    elif ((W1+W2) <= S or (W2+W3) <= S):
+        print(2)
+    else:
+        print(3)
+29.
+from itertools import combinations
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        return list(combinations(range(1, n+1), k))
+
+    
+30.
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        ans=[[]]
+        for j in nums:
+            ans+=[i+[j] for i in ans]
+        return ans
+31.
+class Solution:
+    def search(self, nums: List[int], target: int) -> bool:
+        low, high = 0, len(nums) - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+            if nums[mid] == target:
+                return True
+         
+            if nums[low] == nums[mid]:
+                low += 1
+                continue
+            
+            if nums[low] <= nums[mid]:
+                if nums[low] <= target <= nums[mid]:
+                    high = mid - 1
+                else:
+                    low = mid + 1
+            else:
+                if nums[mid] <= target <= nums[high]:
+                    low = mid + 1
+                else:
+                    high = mid - 1
+        
+        return False
+
+32.
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        dummy = ListNode(0)  
+        dummy.next = head
+        prev = dummy
+        current = head
+
+        while current:
+            next_node = current.next
+
+            while next_node and next_node.val == current.val:
+                next_node = next_node.next
+
+            if current.next != next_node:
+                prev.next = next_node
+            else:
+                prev = current
+            
+            current = next_node
+
+        return dummy.next
+
+33.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
+    
+        before_x = ListNode(0)
+        after_x = ListNode(0)
+        
+        before = before_x
+        after = after_x
+        
+        current = head
+        while current:
+            if current.val < x:
+                before.next = current
+                before = before.next
+            else:
+                after.next = current
+                after = after.next
+            current = current.next
+        
+        
+        before.next = after_x.next
+        after.next = None
+        
+        return before_x.next
+
+34.
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        if not s or s[0] == '0':
+            return 0
+
+        n = len(s)
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        dp[1] = 1
+
+        for i in range(2, n + 1):
+            one_digit = int(s[i - 1])
+            two_digits = int(s[i - 2:i])
+
+            if one_digit != 0:
+                dp[i] += dp[i - 1]
+
+            if 10 <= two_digits <= 26:
+                dp[i] += dp[i - 2]
+
+        return dp[n]
+            
+        
+        
